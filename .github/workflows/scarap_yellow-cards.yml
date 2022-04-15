@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: 0 1 * * *
 jobs:
-  Scrap-Team-Records:
+  Scrap-Yellow-Card-Data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
           path: epl/yellow-cards/data
   Upload-To-Kaggle:
     needs:
-      - Scrap-Team-Records
+      - Scrap-Yellow-Card-Data
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
@@ -38,3 +38,17 @@ jobs:
           name: epl-yellow-cards
       - name: Display structure of downloaded files
         run: ls -R
+
+      - name: Upload datasets
+        uses: jaimevalero/push-kaggle-dataset@v3 # This is the action
+        env:
+          # Do not leak your credentials.
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        with:
+          id:  "charlesadedotun/epl-yellow-cards-data"
+          title: "EPL Yellow Card Data 2021/22"
+          subtitle: "EPL Yellow Card Records for Teams and Referees"
+          description: "## Premier League Yellow Card Records for 2021/22 season <br/>Source https://www.premierleague.com and https://sports.ndtv.com <br/> "
+          files:  *.csv
+          is_public: true
