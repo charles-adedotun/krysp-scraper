@@ -45,9 +45,9 @@ jobs:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         with:
-          id:  "charlesadedotun/epl-yellow-cards-data"
-          title: "EPL Yellow Card Data 2021/22"
-          subtitle: "EPL Yellow Card Records for Teams and Referees"
-          description: "## Premier League Yellow Card Records for 2021/22 season <br/>Source https://www.premierleague.com and https://sports.ndtv.com <br/> "
+          id:  "charlesadedotun/epl-data"
+          title: "English Premier League Data 2021/22"
+          subtitle: "EPL Records 2021/2022 Season"
+          description: "## English Premier League Records for 2021/22 season scarpped from https://www.premierleague.com and https://www.mykhel.com"
           files:  "*.csv"
           is_public: true
