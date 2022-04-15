@@ -27,8 +27,6 @@ page_code = driver.page_source      # Get the source code of the page
 
 soup = BeautifulSoup(page_code, 'lxml')     # Parse the source code
 
-div_table = soup.find("div", {"id": "disciplinary-block"})
-
 table =div_table.find("table")      # Find the table
 
 headers = []    # Create an empty list to store the table headers
@@ -47,6 +45,7 @@ for row in table.find_all("tr")[1:]:
     df.loc[length] = row_data
 
 print(df)
+df.to_csv('./data/standings.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')

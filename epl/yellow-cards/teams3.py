@@ -47,6 +47,7 @@ for row in table.find_all("tr")[1:]:
     df.loc[length] = row_data
 
 print(df)
+df.to_csv('./data/teams3.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')
