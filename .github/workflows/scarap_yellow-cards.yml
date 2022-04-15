@@ -34,6 +34,7 @@ jobs:
         run: |
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
+          git add .
           git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
           git push
   Upload-To-Kaggle:
