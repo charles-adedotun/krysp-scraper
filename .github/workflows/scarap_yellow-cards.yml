@@ -19,10 +19,9 @@ jobs:
           sudo apt-get install firefox-geckodriver
       - name: Install Required Pip Modules
         run: pip3 install -r requirements.txt
-      - name: Go to Scrapper Directory
-        run: cd epl/yellow-cards
       - name: Run Scrappers
         run: |
+          cd epl/yellow-cards
           chmod +x runner.sh
           ./runner.sh
       
