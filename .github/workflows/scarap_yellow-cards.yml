@@ -10,25 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3  
-        
-      - name: Checks
+        uses: actions/checkout@v3                              
+      - name: Get latest packages and updates
+        run: sudo apt-get update && sudo apt-get upgrade -y
+      - name: Install Firefox and Geckodriver
         run: |
-          pwd
-          ls
-
-         
-      
-      # - name: Get latest packages and updates
-      #   run: sudo apt-get update && sudo apt-get upgrade -y
-      # - name: Install Firefox and Geckodriver
-      #   run: |
-      #     sudo apt install firefox
-      #     sudo apt-get install firefox-geckodriver
+          sudo apt install firefox
+          sudo apt-get install firefox-geckodriver
       - name: Install Required Pip Modules
         run: pip3 install -r requirements.txt
-      - name: Verify Installations
-        run: pip3 list
+      - name: Go to Scrapper Directory
+        run: cd epl/yellow-cards
+      - name: Run Scrappers
+        run: |
+          chmod +x runner.sh
+          ./runner.sh
+      
 
 
 
