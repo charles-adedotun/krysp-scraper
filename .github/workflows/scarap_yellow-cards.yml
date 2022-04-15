@@ -14,3 +14,11 @@ jobs:
       - name: Install Firefox and Geckodriver
         run: |
           sudo apt install firefox
+          sudo apt-get install firefox-geckodriver
+      - name: Install Required Pip Modules
+        run: pip3 install -r requirements.txt
+      - name: Verify Installations
+        run: pip3 list
+
+
+
