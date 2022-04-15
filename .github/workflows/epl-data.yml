@@ -35,11 +35,11 @@ jobs:
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
           git add .
-          git commit -a -m "CI commit"
+          git commit -a -m "CI commit" --allow-empty
           git push
   Upload-To-Kaggle:
     needs:
-      - Scrap-Yellow-Card-Data
+      - Scrap-EPL-Data
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
@@ -83,5 +83,5 @@ jobs:
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
           git add .
-          git commit -a -m "CI commit"
+          git commit -a -m "CI commit" --allow-empty
           git push
