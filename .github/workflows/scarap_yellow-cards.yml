@@ -28,4 +28,11 @@ jobs:
         with:
           name: epl-yellow-cards
           path: epl/yellow-cards/data
-    
+  Upload-To-Kaggle:
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/download-artifact@v3
+          with:
+            name: epl-yellow-cards
+        - name: Display structure of downloaded files
+          run: ls -R
