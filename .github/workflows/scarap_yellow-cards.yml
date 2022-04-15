@@ -10,12 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get latest packages and updates
-        run: sudo apt-get update && sudo apt-get upgrade -y
-      - name: Install Firefox and Geckodriver
-        run: |
-          sudo apt install firefox
-          sudo apt-get install firefox-geckodriver
+      - name: Clone the repo
+        uses: actions/clone@v2
+        with:
+          url: https://github.com/charles-adedotun/krysp-scraper
+        run: ls -a
+      # - name: Get latest packages and updates
+      #   run: sudo apt-get update && sudo apt-get upgrade -y
+      # - name: Install Firefox and Geckodriver
+      #   run: |
+      #     sudo apt install firefox
+      #     sudo apt-get install firefox-geckodriver
       - name: Install Required Pip Modules
         run: pip3 install -r requirements.txt
       - name: Verify Installations
