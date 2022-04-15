@@ -1,0 +1,13 @@
+name: Yelow Card Record Scrapper
+on:
+  schedule:
+    - cron: 0 1 * * *
+jobs:
+  Scrap Team Records:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest packages and updates
+        run: sudo apt-get update && sudo apt-get upgrade -y
+      - name: Install Firefox and Geckodriver
+        run: |
+          sudo apt install firefox
