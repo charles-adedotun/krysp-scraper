@@ -29,6 +29,8 @@ jobs:
           name: epl-yellow-cards
           path: epl/yellow-cards/data
   Upload-To-Kaggle:
+    needs:
+      - Scrap-Team-Records
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
