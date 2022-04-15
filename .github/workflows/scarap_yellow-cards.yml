@@ -8,8 +8,8 @@ on:
 jobs:
   Scrap-Team-Records:
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v3
     steps:
+      - uses: actions/checkout@v2
       - name: Get latest packages and updates
         run: sudo apt-get update && sudo apt-get upgrade -y
       - name: Install Firefox and Geckodriver
