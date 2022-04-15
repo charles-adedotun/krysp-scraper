@@ -38,7 +38,6 @@ jobs:
           name: epl-yellow-cards
       - name: Display structure of downloaded files
         run: ls -R
-
       - name: Upload datasets
         uses: jaimevalero/push-kaggle-dataset@v3 # This is the action
         env:
@@ -50,5 +49,5 @@ jobs:
           title: "EPL Yellow Card Data 2021/22"
           subtitle: "EPL Yellow Card Records for Teams and Referees"
           description: "## Premier League Yellow Card Records for 2021/22 season <br/>Source https://www.premierleague.com and https://sports.ndtv.com <br/> "
-          files:  *.csv
+          files:  "*.csv"
           is_public: true
