@@ -22,8 +22,8 @@ jobs:
       - name: Run Scrappers
         run: |
           cd epl/yellow-cards
-          chmod +x runner.sh
-          ./runner.sh
+          chmod +x scraper.sh
+          ./scraper.sh
       - uses: actions/upload-artifact@v3
         with:
           name: epl-yellow-cards
@@ -60,3 +60,28 @@ jobs:
           description: "## English Premier League Records for 2021/22 season scarpped from https://www.premierleague.com and https://www.mykhel.com"
           files:  "*.csv"
           is_public: true
+  Clean-Data:
+    needs:
+      - Scrap-Yellow-Card-Data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '3.5.3' # The R version to download (if necessary) and use.
+      - run: Rscript -e 'print("R is properly installed, let's clean the data.")'
+      - name: Clean Data
+        run: |
+          cd epl/yellow-cards
+          chmod +x cleaner.sh
+          ./cleaner.sh
+      - name: GIT Commit Build Artifacts (data)
+        # Only run on main branch push (e.g. after pull request merge).
+        #if: github.event_name == 'push'
+        run: |
+          git config --global user.name "charles-adedotun"
+          git config --global user.email "charles.adedotun8@gmail.com"
+          git add .
+          git commit -a -m "CI commit"
+          git push
