@@ -46,7 +46,7 @@ for row in table.find_all("tr")[1:]:
 
 # Export the dataframe to a csv file
 print(df)
-df.to_csv('./data/teams.csv', index=False)
+df.to_csv('./data/teams-epl.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')

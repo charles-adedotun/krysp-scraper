@@ -28,6 +28,14 @@ jobs:
         with:
           name: epl-yellow-cards
           path: epl/yellow-cards/data
+      - name: GIT Commit Build Artifacts (data)
+        # Only run on main branch push (e.g. after pull request merge).
+        #if: github.event_name == 'push'
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "charles.adedotun8@gmail.com"
+          git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push
   Upload-To-Kaggle:
     needs:
       - Scrap-Yellow-Card-Data
