@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: 0 1 * * *
 jobs:
-  Scrap Team Records:
+  Scrap-Team-Records:
     runs-on: ubuntu-latest
     steps:
       - name: Get latest packages and updates
