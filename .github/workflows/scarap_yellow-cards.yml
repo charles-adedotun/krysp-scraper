@@ -1,5 +1,8 @@
 name: Yelow Card Record Scrapper
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: 0 1 * * *
 jobs:
