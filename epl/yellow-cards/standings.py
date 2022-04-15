@@ -27,7 +27,7 @@ page_code = driver.page_source      # Get the source code of the page
 
 soup = BeautifulSoup(page_code, 'lxml')     # Parse the source code
 
-table =div_table.find("table")      # Find the table
+table =soup("table")      # Find the table
 
 headers = []    # Create an empty list to store the table headers
 
