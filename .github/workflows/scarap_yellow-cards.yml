@@ -24,10 +24,8 @@ jobs:
           cd epl/yellow-cards
           chmod +x runner.sh
           ./runner.sh
-      
-      - name: Publish and Upload Data
-        - uses: actions/upload-artifact@v3
-          with:
-            name: epl-yellow-cards
-            path: epl/yellow-cards/data
-      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: epl-yellow-cards
+          path: epl/yellow-cards/data
+    
