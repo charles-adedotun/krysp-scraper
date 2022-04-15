@@ -1,5 +1,7 @@
 # import required modules
+import os
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 import time
 from bs4 import BeautifulSoup
 import lxml
@@ -13,26 +15,36 @@ options.add_argument('--incognito')
 options.add_argument('--headless')
 driver = webdriver.Firefox(options=options)
 
-url = "https://www.premierleague.com/stats/top/clubs/total_yel_card?se=418" # set the url
+url = "https://www.premierleague.com/stats/top/clubs/total_yel_card?se=418"     # set the url
 
-driver.get(url) # open the url
-driver.implicitly_wait(10) # in seconds
+driver.get(url)     # open the url
+driver.maximize_window()    # maximize the window
 
-page_code = driver.page_source # Get the source code of the page
+print("waiting for page to load ...")
+time.sleep(10)   # wait for 10 seconds
 
-soup = BeautifulSoup(page_code, 'lxml') # Parse the source code
-# print(soup)
+page_code = driver.page_source      # Get the source code of the page
 
+soup = BeautifulSoup(page_code, 'lxml')     # Parse the source code
 
-stats_table = soup.find_all("div", class_="table playerIndex statsTable teamStatsTable") # Find the stats table
+table = soup.find("table")      # Find the table
 
-table_header = soup.find("thead").text # Find the table header
+headers = []    # Create an empty list to store the table headers
 
+# Loop through the table header and store the text in the list
+for th in table.find_all("th"):
+    headers.append(th.text)
 
-table = soup.findChildren("tbody") # Find the table body
+df = pd.DataFrame(columns=headers)    # Create a dataframe with the headers
 
-print(table)
+# Loop through the table body and store the text in the dataframe
+for row in table.find_all("tr")[1:]:
+    data = row.find_all("td")
+    row_data = [td.text for td in data]
+    length = len(df)
+    df.loc[length] = row_data
 
+print(df)
 
-
-driver.quit() # Close the browser
+# Kill Firefox Browser
+os.system('pkill -f firefox')

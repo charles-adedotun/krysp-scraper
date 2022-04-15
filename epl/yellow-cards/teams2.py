@@ -1,21 +1,21 @@
-# import required modules
+# Import required modules
 import os
 from selenium import webdriver
 from selenium.webdriver import ActionChains
+import requests
 import time
 from bs4 import BeautifulSoup
 import lxml
-import requests
 import pandas as pd
 
-# set up the webdriver
+# Set up the webdriver
 options = webdriver.FirefoxOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
 options.add_argument('--headless')
 driver = webdriver.Firefox(options=options)
 
-url = "https://www.premierleague.com/stats/top/clubs/total_yel_card?se=418"     # set the url
+url = "https://sports.ndtv.com/english-premier-league/stats/most-yellow-cards-team-statsdetail"     # set the url
 
 driver.get(url)     # open the url
 driver.maximize_window()    # maximize the window
@@ -44,9 +44,9 @@ for row in table.find_all("tr")[1:]:
     length = len(df)
     df.loc[length] = row_data
 
+# Export the dataframe to a csv file
 print(df)
-
-
+df.to_csv('./data/teams2.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')
