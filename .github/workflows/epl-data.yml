@@ -62,7 +62,7 @@ jobs:
           is_public: true
   Clean-Data:
     needs:
-      - Scrap-Yellow-Card-Data
+      - Scrap-EPL-Data
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
