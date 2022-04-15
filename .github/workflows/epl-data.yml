@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: 0 1 * * *
 jobs:
-  Scrap-Yellow-Card-Data:
+  Scrap-EPL-Data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
