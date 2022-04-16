@@ -1,3 +1,3 @@
 #!/bin/bash
 
-for f in *.r; do Rscript "$f"; done
+for f in *.R; do Rscript "$f"; done
