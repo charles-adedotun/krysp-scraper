@@ -1,0 +1,93 @@
+name: EPL Data - Scrape, Clean, Process, Analyze, Predict
+on:
+  push:
+    branches:
+      - main
+      - refactor-code
+  schedule:
+    - cron: 0 1 * * *
+jobs:
+  Scrap-EPL-Data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      defaults:
+        run:
+          working-directory: ./epl/scrape-scripts                              
+      - name: Get latest packages and updates
+        run: sudo apt-get update && sudo apt-get upgrade -y
+      - name: Install Firefox and Geckodriver
+        run: |
+          sudo apt install firefox
+          sudo apt-get install firefox-geckodriver
+      - name: Install Required Pip Modules
+        run: pip3 install -r requirements.txt
+      - name: Run Scrappers
+        run: |
+          chmod +x scraper.sh
+          ./scraper.sh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: epl-data
+          path: ../scraped-data
+      - name: GIT Commit Build Artifacts (data)
+        # Only run on main branch push (e.g. after pull request merge).
+        #if: github.event_name == 'push'
+        run: |
+          git config --global user.name "charles-adedotun"
+          git config --global user.email "charles.adedotun8@gmail.com"
+          git add .
+          git commit -a -m "CI commit" --allow-empty
+          git push
+  Upload-To-Kaggle:
+    needs:
+      - Scrap-EPL-Data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: epl-data
+      - name: Display structure of downloaded files
+        run: ls -R
+      - name: Upload datasets
+        uses: jaimevalero/push-kaggle-dataset@v3 # This is the action
+        env:
+          # Do not leak your credentials.
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        with:
+          id:  "charlesadedotun/epl-data"
+          title: "English Premier League Data 2021/22"
+          subtitle: "EPL Records 2021/2022 Season"
+          description: "## English Premier League Records for 2021/22 season scarpped from https://www.mykhel.com"
+          files:  "*.csv"
+          is_public: true
+  Clean-Data:
+    needs:
+      - Scrap-EPL-Data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: r-lib/actions/setup-r@master
+      defaults:
+        run:
+          working-directory: ./epl/clean-scripts
+      # Set-up R
+      - name: Install packages
+        run: |
+          R -e 'install.packages("tidyverse")'
+      # Run R script
+      - name: Clean Data
+        run: |
+          chmod +x cleaner.sh
+          ./cleaner.sh
+      - name: GIT Commit Build Artifacts (data)
+        # Only run on main branch push (e.g. after pull request merge).
+        #if: github.event_name == 'push'
+        run: |
+          git config --global user.name "charles-adedotun"
+          git config --global user.email "charles.adedotun8@gmail.com"
+          git add .
+          git commit -a -m "CI commit" --allow-empty
+          git push
