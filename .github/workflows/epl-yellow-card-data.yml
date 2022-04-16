@@ -36,6 +36,7 @@ jobs:
         run: |
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
+          git checkout {GITHUB_REF##*/}
           git add .
           git commit -a -m "CI commit" --allow-empty
           git push
@@ -92,6 +93,7 @@ jobs:
         run: |
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
+          git checkout {GITHUB_REF##*/}
           git add .
           git commit -a -m "CI commit" --allow-empty
           git push
