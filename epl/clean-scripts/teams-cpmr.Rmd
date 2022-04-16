@@ -1,0 +1,34 @@
+---
+title: "teams-cpmr"
+author: "Charles Adedotun"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r libraries, echo=FALSE}
+library(tidyverse)
+```
+
+```{r read data}
+raw_data <- read.csv("../scraped-data/discipline.csv")
+raw_data <- as_tibble(raw_data)
+```
+
+```{r select columns}
+raw_columns <- raw_data %>% select(Team, Matches, Yellow.Cards)
+head(raw_columns)
+```
+```{r mutate and order table}
+new_table <- raw_columns %>% mutate(yellow_card_ratio = Yellow.Cards / Matches)
+new_table <- new_table[order(-new_table$yellow_card_ratio),]
+head(new_table)
+```
+
+```{r select data}
+data <- new_table %>% select(Team, yellow_card_ratio)
+head(data)
+```
+
+```{r export data}
+write.csv(data, "../cleaned-data/teams-cpmr.csv", row.names = FALSE)
+```

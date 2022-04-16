@@ -73,11 +73,17 @@ jobs:
       #   run: |
       #     R -e 'install.packages("tidyverse")'
       # # Run R script
-      - name: Install Docker
-        run: |
-          chmod +x install-docker.sh
-          ./install-docker.sh
-        working-directory: ./epl/clean-scripts
+      
+      # - name: Install Docker
+      #   run: |
+      #     chmod +x install-docker.sh
+      #     ./install-docker.sh
+      #   working-directory: ./epl/clean-scripts
+      - name: Render Document
+        uses: lc5415/rmarkdown-action@v1
+        with:
+          input_file: epl/clean-scripts/*.Rmd
+          output_format: html_document
       - name: GIT Commit Build Artifacts (data)
         # Only run on main branch push (e.g. after pull request merge).
         #if: github.event_name == 'push'
