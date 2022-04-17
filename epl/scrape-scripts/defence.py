@@ -27,7 +27,7 @@ page_code = driver.page_source      # Get the source code of the page
 
 soup = BeautifulSoup(page_code, 'lxml')     # Parse the source code
 
-div_table = soup.find("div", {"id": "overview-block"})
+div_table = soup.find("div", {"id": "defence-block"})
 
 table =div_table.find("table")      # Find the table
 
@@ -47,7 +47,7 @@ for row in table.find_all("tr")[1:]:
     df.loc[length] = row_data
 
 print(df)
-df.to_csv('./data/overview.csv', index=False)
+df.to_csv('../scraped-data/defence.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')

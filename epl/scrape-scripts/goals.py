@@ -1,21 +1,21 @@
-# Import required modules
+# import required modules
 import os
 from selenium import webdriver
 from selenium.webdriver import ActionChains
-import requests
 import time
 from bs4 import BeautifulSoup
 import lxml
+import requests
 import pandas as pd
 
-# Set up the webdriver
+# set up the webdriver
 options = webdriver.FirefoxOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
 options.add_argument('--headless')
 driver = webdriver.Firefox(options=options)
 
-url = "https://www.premierleague.com/stats/top/clubs/total_yel_card?se=418"     # set the url
+url = "https://www.mykhel.com/football/premier-league-team-stats-l8/"     # set the url
 
 driver.get(url)     # open the url
 driver.maximize_window()    # maximize the window
@@ -27,7 +27,9 @@ page_code = driver.page_source      # Get the source code of the page
 
 soup = BeautifulSoup(page_code, 'lxml')     # Parse the source code
 
-table = soup.find("table")      # Find the table
+div_table = soup.find("div", {"id": "goals-block"})
+
+table =div_table.find("table")      # Find the table
 
 headers = []    # Create an empty list to store the table headers
 
@@ -44,9 +46,8 @@ for row in table.find_all("tr")[1:]:
     length = len(df)
     df.loc[length] = row_data
 
-# Export the dataframe to a csv file
 print(df)
-df.to_csv('./data/teams-epl.csv', index=False)
+df.to_csv('../scraped-data/goals.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')

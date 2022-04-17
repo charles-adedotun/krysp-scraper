@@ -15,7 +15,7 @@ options.add_argument('--incognito')
 options.add_argument('--headless')
 driver = webdriver.Firefox(options=options)
 
-url = "https://sports.ndtv.com/english-premier-league/stats/most-yellow-cards-team-statsdetail"     # set the url
+url = "https://www.premierleague.com/stats/top/clubs/total_yel_card?se=418"     # set the url
 
 driver.get(url)     # open the url
 driver.maximize_window()    # maximize the window
@@ -46,7 +46,7 @@ for row in table.find_all("tr")[1:]:
 
 # Export the dataframe to a csv file
 print(df)
-df.to_csv('./data/teams2.csv', index=False)
+df.to_csv('../scraped-data/teams-epl.csv', index=False)
 
 # Kill Firefox Browser
 os.system('pkill -f firefox')
