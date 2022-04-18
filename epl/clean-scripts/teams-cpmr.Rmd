@@ -6,6 +6,11 @@ output: html_document
 ---
 
 ```{r libraries, echo=FALSE}
+install.packages("rmarkdown")
+install.packages("tidyverse")
+```
+
+```{r libraries, echo=FALSE}
 library(tidyverse)
 ```
 
