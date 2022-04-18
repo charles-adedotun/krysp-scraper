@@ -75,6 +75,7 @@ jobs:
           brew install --cask rstudio
           brew install markdown
           brew install pandoc
+          open -na Rstudio
       # - uses: r-lib/actions/setup-r@v1
       # - uses: r-lib/actions/setup-pandoc@v1
       # - uses: r-lib/actions/setup-tinytex@v1
