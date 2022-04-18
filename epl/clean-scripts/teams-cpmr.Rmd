@@ -12,6 +12,10 @@ install.packages("tidyverse")
 
 ```{r libraries, echo=FALSE}
 library(tidyverse)
+library(rmarkdown)
+```
+
+```{r, echo=FALSE}
 ```
 
 ```{r read data}
