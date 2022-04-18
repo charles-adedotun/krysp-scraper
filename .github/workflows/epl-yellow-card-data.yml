@@ -71,6 +71,7 @@ jobs:
       - name: Install R
         run: |
           brew install r
+          brew install --cask xquartz
           brew install --cask rstudio
           brew install markdown
           brew install pandoc
