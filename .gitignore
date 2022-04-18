@@ -1,2 +1,3 @@
 *.log
 .Rproj.user/
+.DS_Store
