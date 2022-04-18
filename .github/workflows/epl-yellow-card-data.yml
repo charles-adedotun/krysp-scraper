@@ -71,6 +71,7 @@ jobs:
       - name: Install R
         run: |
           brew install r
+          brew install --cask rstudio
           brew install pandoc
       # - uses: r-lib/actions/setup-r@v1
       # - uses: r-lib/actions/setup-pandoc@v1
