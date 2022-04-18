@@ -75,9 +75,9 @@ jobs:
       # - uses: r-lib/actions/setup-r@v1
       # - uses: r-lib/actions/setup-pandoc@v1
       # - uses: r-lib/actions/setup-tinytex@v1
-      - name: Install rmarkdown
-        run: Rscript -e 'install.packages("rmarkdown")'
-      - name: Render my document to all types
+      # - name: Install rmarkdown
+      #   run: Rscript -e 'install.packages("rmarkdown")'
+      - name: Run clean scripts
         run: |
           chmod +x cleaner.sh
           ./cleaner.sh
