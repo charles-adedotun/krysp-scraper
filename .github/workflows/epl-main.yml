@@ -8,7 +8,7 @@ on:
     - cron: 0 1 * * *
 
 jobs:
-  Scrap-EPL-Data:
+  Scrape-EPL-Data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
 
   Upload-To-Kaggle:
     needs:
-      - Scrap-EPL-Data
+      - Scrape-EPL-Data
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
@@ -65,7 +65,7 @@ jobs:
 
   Clean-Data:
     needs:
-      - Scrap-EPL-Data
+      - Scrape-EPL-Data
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
