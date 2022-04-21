@@ -98,7 +98,7 @@ jobs:
           git commit -a -m "CI commit" --allow-empty
           git push
 
-  Upload-To-Kaggle:
+  Upload-YellowCard-Data-To-Kaggle:
     needs:
       - Clean-Data
     runs-on: ubuntu-latest
