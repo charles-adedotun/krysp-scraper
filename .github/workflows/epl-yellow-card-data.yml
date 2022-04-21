@@ -6,6 +6,16 @@ on:
   schedule:
     - cron: 0 1 * * *
 jobs:
+  render_document:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Render document
+        uses: lc5415/rmarkdown-action@v1
+        with:
+          input_file: ./epl/clean-scripts/teams-cpmr.Rmd
+	  output_format: pdf_document
   # Scrap-EPL-Data:
   #   runs-on: ubuntu-latest
   #   steps:
@@ -65,27 +75,27 @@ jobs:
   Clean-Data:
     # needs:
     #   - Scrap-EPL-Data
-    runs-on: macOS-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install R
-        run: |
-          brew install r
-          brew install --cask xquartz
-          brew install --cask rstudio
-          brew install markdown
-          brew install pandoc
-          open -na Rstudio
+    # runs-on: macOS-latest
+    # steps:
+    #   - uses: actions/checkout@v3
+    #   - name: Install R
+    #     run: |
+    #       brew install r
+    #       brew install --cask xquartz
+    #       brew install --cask rstudio
+    #       brew install markdown
+    #       brew install pandoc
+    #       open -na Rstudio
       # - uses: r-lib/actions/setup-r@v1
       # - uses: r-lib/actions/setup-pandoc@v1
       # - uses: r-lib/actions/setup-tinytex@v1
       # - name: Install rmarkdown
       #   run: Rscript -e 'install.packages("rmarkdown")'
-      - name: Run clean scripts
-        run: |
-          chmod +x cleaner.sh
-          ./cleaner.sh
-        working-directory: ./epl/clean-scripts
+      # - name: Run clean scripts
+      #   run: |
+      #     chmod +x cleaner.sh
+      #     ./cleaner.sh
+      #   working-directory: ./epl/clean-scripts
       # - uses: r-lib/actions/setup-r@master
       # # Set-up R
       # - name: Install packages
@@ -107,14 +117,14 @@ jobs:
       # #   with:
       # #     input_file: epl/clean-scripts/teams-cpmr.Rmd
       # #     output_format: html_document
-      - name: GIT Commit Build Artifacts (data)
-        # Only run on main branch push (e.g. after pull request merge).
-        #if: github.event_name == 'push'
-        run: |
-          git config --global user.name "charles-adedotun"
-          git config --global user.email "charles.adedotun8@gmail.com"
-          git fetch
-          git pull
-          git add .
-          git commit -a -m "CI commit" --allow-empty
-          git push
+      # - name: GIT Commit Build Artifacts (data)
+      #   # Only run on main branch push (e.g. after pull request merge).
+      #   #if: github.event_name == 'push'
+      #   run: |
+      #     git config --global user.name "charles-adedotun"
+      #     git config --global user.email "charles.adedotun8@gmail.com"
+      #     git fetch
+      #     git pull
+      #     git add .
+      #     git commit -a -m "CI commit" --allow-empty
+      #     git push
