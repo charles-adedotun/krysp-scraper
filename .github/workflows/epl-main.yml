@@ -29,11 +29,9 @@ jobs:
         working-directory: ./epl/scrape-scripts
       - uses: actions/upload-artifact@v3
         with:
-          name: epl-data
+          name: epl-raw-data
           path: ./epl/scraped-data
       - name: Commit Build Artifacts
-        # Only run on main branch push (e.g. after pull request merge).
-        #if: github.event_name == 'push'
         run: |
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
@@ -49,13 +47,12 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: epl-data
+          name: epl-raw-data
       - name: Display structure of downloaded files
         run: ls -R
       - name: Upload datasets
-        uses: jaimevalero/push-kaggle-dataset@v3 # This is the action
+        uses: jaimevalero/push-kaggle-dataset@v3
         env:
-          # Do not leak your credentials.
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         with:
@@ -87,9 +84,11 @@ jobs:
           chmod +x cleaner.sh
           ./cleaner.sh
         working-directory: ./epl/clean-scripts
+      - uses: actions/upload-artifact@v3
+        with:
+          name: epl-yellow-card-data
+          path: ./epl/cleaned-data
       - name: Commit Build Artifacts
-        # Only run on main branch push (e.g. after pull request merge).
-        #if: github.event_name == 'push'
         run: |
           git config --global user.name "charles-adedotun"
           git config --global user.email "charles.adedotun8@gmail.com"
