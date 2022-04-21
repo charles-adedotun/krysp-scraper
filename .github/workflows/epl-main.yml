@@ -22,7 +22,7 @@ jobs:
       - name: Install Required Pip Modules
         run: pip3 install -r requirements.txt
         working-directory: ./epl/scrape-scripts
-      - name: Run Scrappers
+      - name: Run Scrape Script
         run: |
           chmod +x scraper.sh
           ./scraper.sh
