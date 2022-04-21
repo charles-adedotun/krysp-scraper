@@ -115,7 +115,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         with:
           id:  "charlesadedotun/epl-yellow-card-data-2021-22"
-          title: "English Premier League Yellow Card Per Match Data 2021/22"
+          title: "EPL Yellow Card Per Match Data"
           subtitle: "EPL Booking Records per match 2021/2022 Season"
           description: "## English Premier League Yellow Card per match data for teams and referees 2021/22 season scarpped from https://www.mykhel.com amd the Premier League website, https://www.premierleague.com/."
           files:  "*.csv"
