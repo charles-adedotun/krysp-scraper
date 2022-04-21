@@ -16,6 +16,9 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install rmarkdown
         run: Rscript -e 'install.packages("rmarkdown")'
+      - name: Render Clean Scripts
+        run: Rscript -e 'rmarkdown::render("teams-cpmr.Rmd")'
+        working-directory: ./epl/clean-scripts
 
   # Scrap-EPL-Data:
   #   runs-on: ubuntu-latest
