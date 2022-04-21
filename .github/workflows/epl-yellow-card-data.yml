@@ -18,8 +18,10 @@ jobs:
         run: Rscript -e 'install.packages("rmarkdown")'
       - name: Install tidyverse
         run: Rscript -e 'install.packages("tidyverse")'
-      - name: Render Clean Scripts
-        run: Rscript -e 'rmarkdown::render("teams-cpmr.Rmd")'
+      - name: Run and Render Clean Scripts
+        run: |
+          chmod +x cleaner.sh
+          ./cleaner.sh
         working-directory: ./epl/clean-scripts
 
   # Scrap-EPL-Data:
