@@ -1,8 +1,8 @@
 "Team","yellow_card_ratio"
-"  Leeds United ",2.76470588235294
+"  Leeds United ",2.74285714285714
 "  Aston Villa ",2.23529411764706
-"  Everton ",2.21212121212121
-"  Newcastle United ",2.17142857142857
+"  Newcastle United ",2.19444444444444
+"  Everton ",2.14705882352941
 "  Brighton and Hove Albion ",1.94444444444444
 "  Manchester United ",1.91891891891892
 "  Burnley ",1.82857142857143
@@ -12,10 +12,10 @@
 "  Chelsea ",1.68571428571429
 "  Southampton ",1.66666666666667
 "  Watford ",1.6
+"  Leicester City ",1.55882352941176
 "  Brentford ",1.55555555555556
-"  Arsenal ",1.52941176470588
-"  Leicester City ",1.51515151515152
-"  Norwich City ",1.41176470588235
+"  Arsenal ",1.54285714285714
+"  Norwich City ",1.4
 "  Liverpool ",1.4
-"  West Ham United ",1.2
-"  Manchester City ",1.14705882352941
+"  West Ham United ",1.19444444444444
+"  Manchester City ",1.14285714285714
