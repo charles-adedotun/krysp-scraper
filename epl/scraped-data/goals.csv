@@ -1,21 +1,21 @@
  Team,Matches,Total Goals,Average Goals,Goals Conceded,Average Conceded,Goal Difference
+  Arsenal ,3,9,3.00,2,0.67,7
+  Brentford ,3,8,2.67,5,1.67,3
+  Tottenham Hotspur ,3,7,2.33,3,1.00,4
   Manchester City ,2,6,3.00,0,0.00,6
-  Brentford ,2,6,3.00,2,1.00,4
-  Arsenal ,2,6,3.00,2,1.00,4
-  Tottenham Hotspur ,2,6,3.00,3,1.50,3
-  Leicester City ,2,4,2.00,6,3.00,-2
+  Leicester City ,3,5,1.67,8,2.67,-3
+  Southampton ,3,5,1.67,7,2.33,-2
+  Fulham ,3,5,1.67,4,1.33,1
   Leeds United ,2,4,2.00,3,1.50,1
+  Crystal Palace ,3,4,1.33,4,1.33,0
   Liverpool ,2,3,1.50,3,1.50,0
   Chelsea ,2,3,1.50,2,1.00,1
-  Southampton ,2,3,1.50,6,3.00,-3
-  Fulham ,2,2,1.00,2,1.00,0
+  Aston Villa ,3,3,1.00,6,2.00,-3
   Newcastle United ,2,2,1.00,0,0.00,2
   Brighton and Hove Albion ,2,2,1.00,1,0.50,1
-  Aston Villa ,2,2,1.00,3,1.50,-1
-  Bournemouth ,2,2,1.00,4,2.00,-2
-  Wolverhampton Wanderers ,2,1,0.50,2,1.00,-1
+  Everton ,3,2,0.67,4,1.33,-2
+  Bournemouth ,3,2,0.67,7,2.33,-5
+ Nottingham Forest ,3,2,0.67,3,1.00,-1
+  Wolverhampton Wanderers ,3,1,0.33,3,1.00,-2
   Manchester United ,2,1,0.50,6,3.00,-5
-  Everton ,2,1,0.50,3,1.50,-2
- Nottingham Forest ,2,1,0.50,2,1.00,-1
-  Crystal Palace ,2,1,0.50,3,1.50,-2
   West Ham United ,2,0,0.00,3,1.50,-3
