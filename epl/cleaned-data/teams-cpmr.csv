@@ -1,21 +1,21 @@
 "Team","yellow_card_ratio"
 "  Manchester United ",4
-" Nottingham Forest ",3.5
-"  Aston Villa ",3.5
-"  Bournemouth ",3
-"  Crystal Palace ",2.5
-"  Fulham ",2.5
+" Nottingham Forest ",3
+"  Bournemouth ",2.66666666666667
+"  Aston Villa ",2.66666666666667
+"  Fulham ",2.66666666666667
 "  Chelsea ",2.5
 "  Leeds United ",2.5
-"  Everton ",2
-"  Wolverhampton Wanderers ",1.5
+"  Everton ",2.33333333333333
+"  Crystal Palace ",2.33333333333333
+"  Wolverhampton Wanderers ",1.66666666666667
+"  Tottenham Hotspur ",1.66666666666667
 "  Newcastle United ",1.5
 "  Brighton and Hove Albion ",1.5
-"  Arsenal ",1.5
-"  Tottenham Hotspur ",1.5
+"  Southampton ",1.33333333333333
+"  Arsenal ",1.33333333333333
+"  Leicester City ",1
 "  Liverpool ",1
+"  Brentford ",0.666666666666667
 "  West Ham United ",0.5
-"  Southampton ",0.5
-"  Leicester City ",0.5
 "  Manchester City ",0.5
-"  Brentford ",0
