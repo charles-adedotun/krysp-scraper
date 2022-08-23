@@ -1,9 +1,11 @@
  Team,Matches,Attempts,Attempts on target,Attempts off Target,Attempts Blocked
   Manchester City ,3,37,19,18,17
+  Liverpool ,3,35,13,22,17
   Newcastle United ,3,31,17,14,8
   Arsenal ,3,31,15,16,12
   Tottenham Hotspur ,3,30,17,13,9
   Wolverhampton Wanderers ,3,29,10,19,13
+  Manchester United ,3,29,13,16,15
   Aston Villa ,3,28,11,17,12
   Leeds United ,3,28,15,13,9
   Everton ,3,27,16,11,15
@@ -14,8 +16,6 @@
   Chelsea ,3,25,12,13,20
   Crystal Palace ,3,25,14,11,9
  Nottingham Forest ,3,24,11,13,8
-  Liverpool ,2,23,8,15,12
   West Ham United ,3,22,9,13,16
-  Manchester United ,2,21,9,12,11
   Leicester City ,3,20,8,12,6
   Bournemouth ,3,13,5,8,3
