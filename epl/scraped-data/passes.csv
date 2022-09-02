@@ -1,13 +1,14 @@
  Team,Matches,Passes Attempted (PA),Passes Completed (PC),PC (%),Average Ball Possession
   Manchester City ,5,3692,3366,91%,72%
   Liverpool ,5,3304,2770,84%,70%
+  Leicester City ,5,2727,2290,84%,55%
   Chelsea ,5,2664,2239,84%,60%
   Arsenal ,5,2579,2200,85%,56%
   Aston Villa ,5,2450,2022,83%,54%
   Tottenham Hotspur ,5,2449,2078,85%,50%
   Wolverhampton Wanderers ,5,2387,1976,83%,55%
+  Manchester United ,5,2263,1775,78%,51%
   Leeds United ,5,2246,1726,77%,53%
-  Leicester City ,4,2132,1803,85%,55%
   Brentford ,5,2125,1683,79%,49%
   Brighton and Hove Albion ,5,2071,1606,78%,49%
   Crystal Palace ,5,2021,1633,81%,42%
@@ -15,7 +16,6 @@
  Nottingham Forest ,5,1855,1396,75%,43%
   Everton ,5,1803,1362,76%,40%
   Newcastle United ,5,1772,1333,75%,45%
-  Manchester United ,4,1750,1375,79%,52%
   Southampton ,5,1700,1233,73%,41%
   Bournemouth ,5,1688,1272,75%,35%
   Fulham ,5,1500,1030,69%,37%
