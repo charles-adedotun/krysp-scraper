@@ -1,21 +1,21 @@
  Team,Matches,Total Goals,Average Goals,Goals Conceded,Average Conceded,Goal Difference
-  Manchester City ,5,19,3.80,5,1.00,14
-  Liverpool ,5,15,3.00,6,1.20,9
+  Manchester City ,6,20,3.33,6,1.00,14
+  Liverpool ,6,15,2.50,6,1.00,9
+  Brentford ,6,15,2.50,9,1.50,6
   Arsenal ,5,13,2.60,4,0.80,9
-  Brentford ,5,10,2.00,7,1.40,3
-  Tottenham Hotspur ,5,10,2.00,4,0.80,6
-  Leeds United ,5,8,1.60,5,1.00,3
-  Fulham ,5,8,1.60,7,1.40,1
-  Southampton ,5,7,1.40,9,1.80,-2
-  Crystal Palace ,5,7,1.40,9,1.80,-2
-  Newcastle United ,5,7,1.40,6,1.20,1
+  Tottenham Hotspur ,6,12,2.00,5,0.83,7
+  Leeds United ,6,10,1.67,10,1.67,0
+  Fulham ,6,9,1.50,9,1.50,0
+  Chelsea ,6,8,1.33,9,1.50,-1
+  Southampton ,6,7,1.17,10,1.67,-3
+  Newcastle United ,6,7,1.17,6,1.00,1
+  Crystal Palace ,6,7,1.17,9,1.50,-2
   Leicester City ,5,6,1.20,11,2.20,-5
-  Chelsea ,5,6,1.20,8,1.60,-2
   Brighton and Hove Albion ,5,6,1.20,3,0.60,3
   Manchester United ,5,5,1.00,7,1.40,-2
-  Everton ,5,4,0.80,6,1.20,-2
-  Aston Villa ,5,4,0.80,9,1.80,-5
-  Wolverhampton Wanderers ,5,2,0.40,4,0.80,-2
-  West Ham United ,5,2,0.40,6,1.20,-4
-  Bournemouth ,5,2,0.40,16,3.20,-14
- Nottingham Forest ,5,2,0.40,11,2.20,-9
+  Bournemouth ,6,5,0.83,18,3.00,-13
+  Aston Villa ,6,5,0.83,10,1.67,-5
+  Everton ,6,4,0.67,6,1.00,-2
+ Nottingham Forest ,6,4,0.67,14,2.33,-10
+  Wolverhampton Wanderers ,6,3,0.50,4,0.67,-1
+  West Ham United ,6,3,0.50,8,1.33,-5
