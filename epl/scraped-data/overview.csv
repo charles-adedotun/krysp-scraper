@@ -1,9 +1,9 @@
  Team,Group Name,Matches,Wins,Draws,Losses,Points
-  Arsenal ,,5,5,0,0,15
+  Arsenal ,,6,5,0,1,15
+  Manchester United ,,6,4,0,2,12
+  Brighton and Hove Albion ,,6,4,1,1,13
   Tottenham Hotspur ,,6,4,2,0,14
   Manchester City ,,6,4,2,0,14
-  Manchester United ,,5,3,0,2,9
-  Brighton and Hove Albion ,,5,3,1,1,10
   Chelsea ,,6,3,1,2,10
   Bournemouth ,,6,2,1,3,7
   Southampton ,,6,2,1,3,7
@@ -18,4 +18,4 @@
   Newcastle United ,,6,1,4,1,7
   Crystal Palace ,,6,1,3,2,6
   Everton ,,6,0,4,2,4
-  Leicester City ,,5,0,1,4,1
+  Leicester City ,,6,0,1,5,1
