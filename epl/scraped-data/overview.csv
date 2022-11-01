@@ -1,13 +1,13 @@
  Team,Group Name,Matches,Wins,Draws,Losses,Points
-  Arsenal ,,11,9,1,1,28
+  Arsenal ,,12,10,1,1,31
   Manchester City ,,12,9,2,1,29
   Tottenham Hotspur ,,13,8,2,3,26
-  Manchester United ,,11,6,2,3,20
+  Manchester United ,,12,7,2,3,23
   Chelsea ,,12,6,3,3,21
   Newcastle United ,,13,6,6,1,24
   Brighton and Hove Albion ,,12,5,3,4,18
   Fulham ,,13,5,4,4,19
-  West Ham United ,,12,4,2,6,14
+  West Ham United ,,13,4,2,7,14
   Crystal Palace ,,12,4,4,4,16
   Liverpool ,,12,4,4,4,16
   Aston Villa ,,13,3,3,7,12
@@ -18,4 +18,4 @@
   Brentford ,,13,3,6,4,15
   Leicester City ,,13,3,2,8,11
   Wolverhampton Wanderers ,,13,2,4,7,10
- Nottingham Forest ,,12,2,3,7,9
+ Nottingham Forest ,,13,2,3,8,9
